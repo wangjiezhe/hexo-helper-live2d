@@ -348,5 +348,3 @@ live2d:
 
 [current-device]: https://img.shields.io/npm/v/current-device.svg?label=current-device
 [current-device-url]: https://github.com/matthewhudson/current-device
-
-[contributors]: https://opencollective.com/hexo-helper-live2d/contributors.svg?width=890&button=true
