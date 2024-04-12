@@ -17,12 +17,12 @@ const print = require('./lib/print');
 
 const generators = [];
 
-const manifest = require('live2d-widget/lib/manifest');
-const mainfestPath = require.resolve('live2d-widget/lib/manifest');
+const manifest = require('@wangjiezhe/live2d-widget/lib/manifest');
+const mainfestPath = require.resolve('@wangjiezhe/live2d-widget/lib/manifest');
 const coreScriptName = manifest['main.js'];
 const thisPkgInfo = require('./package');
-const widgetVer = thisPkgInfo.dependencies['live2d-widget'];
-const localWidgetVer = require(path.resolve(require.resolve('live2d-widget'), '../../', 'package')).version;
+const widgetVer = thisPkgInfo.dependencies['@wangjiezhe/live2d-widget'];
+const localWidgetVer = require(path.resolve(require.resolve('@wangjiezhe/live2d-widget'), '../../', 'package')).version;
 
 const blogRoot = hexo.config.root || '/';
 
@@ -49,7 +49,7 @@ function getScriptURL (scriptFrom) { // eslint-disable-line max-lines-per-functi
 
   if (config.log) {
 
-    print.log(`hexo-helper-live2d@${thisPkgInfo.version}, using live2d-widget@${widgetVer}.`);
+    print.log(`@wangjiezhe/hexo-helper-live2d@${thisPkgInfo.version}, using @wangjiezhe/live2d-widget@${widgetVer}.`);
 
   }
 
@@ -63,7 +63,7 @@ function getScriptURL (scriptFrom) { // eslint-disable-line max-lines-per-functi
      */
     if (config.log) {
 
-      print.log(`use local live2d-widget@${localWidgetVer}`);
+      print.log(`use local @wangjiezhe/live2d-widget@${localWidgetVer}`);
 
     }
     const scriptGenerators = buildGeneratorsFromManifest(manifest, path.dirname(mainfestPath), `${config.pluginRootPath}${config.pluginJsPath}`);
@@ -78,14 +78,14 @@ function getScriptURL (scriptFrom) { // eslint-disable-line max-lines-per-functi
      * Is jsdelivr online CDN(2)
      * Use jsdelivr
      */
-    return `https://cdn.jsdelivr.net/npm/live2d-widget@${widgetVer}/lib/${coreScriptName}`;
+    return `https://cdn.jsdelivr.net/npm/@wangjiezhe/live2d-widget@${widgetVer}/lib/${coreScriptName}`;
   case 'unpkg':
 
     /*
      * Is unpkg online CDN(3)
      * Use unpkg
      */
-    return `https://unpkg.com/live2d-widget@${widgetVer}/lib/${coreScriptName}`;
+    return `https://unpkg.com/@wangjiezhe/live2d-widget@${widgetVer}/lib/${coreScriptName}`;
   default:
 
     /*
